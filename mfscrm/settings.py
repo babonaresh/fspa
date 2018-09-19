@@ -84,10 +84,10 @@ WSGI_APPLICATION = 'mfscrm.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'd1lel22ppmugn8',
-        'USER': 'kxadkfktopfern',
-        'PASSWORD': '972c7b81144a8eb9c6cb69652c65a426d0f519a3af366913bfc76c410ef2c11a',
-        'HOST': 'ec2-174-129-32-37.compute-1.amazonaws.com',
+        'NAME': 'd7bmr1013c01du',
+        'USER': 'grgjhsrcvhyqwc',
+        'PASSWORD': 'f25c469c105cd2a00e2b7a86a4992602f225883123560003188b36e87341c743',
+        'HOST': 'ec2-54-83-4-76.compute-1.amazonaws.com',
         'PORT': '5432',
     }
 }
@@ -152,8 +152,8 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 EMAIL_HOST = 'smtp.mailtrap.io'
-EMAIL_HOST_USER = 'YOUR HOST USER'
-EMAIL_HOST_PASSWORD = 'YOUR HOST PASSWORD'
+EMAIL_HOST_USER = 'grgjhsrcvhyqwc'
+EMAIL_HOST_PASSWORD = 'f25c469c105cd2a00e2b7a86a4992602f225883123560003188b36e87341c743 '
 EMAIL_PORT = 2525
 #EMAIL_USE_TLS = True
 
