@@ -11,23 +11,6 @@ def home(request):
    return render(request, 'crm/home.html',
                  {'crm': home})
 
-def signup(request):
-    global form
-    if request.method == 'POST':
-        form = SignUpForm(request.POST)
-        if form.is_valid():
-            new_user = form.save(commit=False)
-            username = form.cleaned_data.get('username')
-            raw_password = form.cleaned_data.get('password1')
-            new_user.set_password(raw_password)
-            user = authenticate(username=username, password=raw_password)
-            new_user.save()
-            login(request, user)
-            return render(request, 'registration/login.html', {'new_user': new_user})
-    else:
-            form = SignUpForm()
-            return render(request,'registration/signup.html',
-                 {'registration': signup} )
 
 @login_required
 def customer_list(request):
