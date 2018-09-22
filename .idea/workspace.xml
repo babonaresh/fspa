@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a7a32051-e13c-4832-9915-204e18983dfb" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-    </list>
+    <list default="true" id="a7a32051-e13c-4832-9915-204e18983dfb" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -198,6 +196,8 @@
       <find>accounts/</find>
       <find>django.db.utils</find>
       <find>OperationalError</find>
+      <find>accounts/h</find>
+      <find>home</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
