@@ -1,0 +1,180 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+
+<style type="text/css">
+body {
+    font-family:Helvetica, sans-serif;
+    color:#222;
+    line-height:1.5;
+}
+table {
+    width:100%;
+    border-spacing:0;
+    border-collapse: collapse;
+    margin:20px 0;
+}
+table th, table td {
+    text-align:left;
+    font-size:14px;
+    padding:10px;
+    margin:0;
+}
+tbody tr:nth-child(odd) {
+    background:#efefef;
+}
+thead th, tbody tr.total {
+    background:#5993bb;
+    color:#fff;
+    font-weight:bold;
+}
+h1 {
+    margin:0;
+}
+.secondary {
+    color:#bbb;
+    margin-bottom:20px;
+}
+.num {
+    text-align:right;
+}
+.paid, .pending {
+    color:#1bae37;
+    border:4px solid #1bae37;
+    text-transform:uppercase;
+    font-weight:bold;
+    font-size:22px;
+    padding:12px;
+    float:right;
+    transform: rotate(-15deg);
+    margin-right:40px;
+}
+.pending {
+    color:#a82d2d;
+    border:4px solid #a82d2d;
+}
+</style>
+
+</head>
+<body>
+
+<div >
+    <div >
+        <div>
+            <span><h2 style="padding-left: 15Px">Customer Summary</h2></span>
+        </div>
+    </div>
+    <hr/>
+    <div class="row">
+        <table >
+                    <thead>
+
+                    <tr >
+                        <th nowrap="true">Customer Name </th>
+                        <th nowrap="true">Organization</th>
+                        <th>Role</th>
+                        <th>Email</th>
+                        <th nowrap="true">Phone</th>
+                        <th nowrap="true">Bldg-Room</th>
+                        <th>Account</th>
+                        <th nowrap="true">Address</th>
+                        <th>City</th>
+                        <th>State</th>
+                        <th>Zip Code</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                            <td>{{ customer.cust_name }}</td>
+                            <td>{{ customer.organization }}</td>
+                            <td>{{ customer.role }}</td>
+                            <td>{{ customer.email }}</td>
+                            <td nowrap="true">{{ customer.phone_number }}</td>
+                            <td>{{ customer.bldgroom }}</td>
+                            <td>{{ customer.account_number }}</td>
+                            <td nowrap="true">{{ customer.address }}</td>
+                            <td>{{ customer.city }}</td>
+                            <td>{{ customer.state }}</td>
+                            <td>{{ customer.zipcode }}</td>
+
+                        </tr>
+
+                    </tbody>
+                </table>
+    </div>
+  <hr/>
+
+     <div >
+        <span ><h3 style="padding-left: 15Px">Product Information</h3></span>
+
+          <table >
+            <thead>
+                <tr >
+                <th>Product</th>
+                <th>Description</th>
+                <th>Quantity</th>
+                <th nowrap="true">Pickup Time</th>
+                <th nowrap="true">Total Charge</th>
+
+            </tr>
+            </thead>
+            <tbody>
+            {% for product in products %}
+                <tr>
+                    <td nowrap="true">{{ product.product }}</td>
+                    <td>{{ product.p_description }}</td>
+                    <td nowrap="true">{{ product.quantity }}</td>
+                    <td nowrap="true">{{ product.pickup_time }}</td>
+                    <td nowrap="true">{{ product.charge }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+               <thead>
+                <tr >
+                    <th colspan="4">Total of Product Charges</th>
+                    <th>{{ sum_product_charge.charge__sum }}</th>
+                </tr>
+            </thead>
+          </table>
+</div>
+<div >
+        <span ><h3 style="padding-left: 15Px">Service Information</h3></span>
+
+          <table>
+            <thead>
+            <tr >
+                <th>Service Category</th>
+                <th>Description</th>
+                <th>Location</th>
+                <th nowrap="true">Setup Time</th>
+                <th nowrap="true">Cleanup Time</th>
+                <th nowrap="true">Service Charge</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for service in services %}
+                <tr>
+                    <td nowrap="true">{{ service.service_category }}</td>
+                    <td>{{ service.description }}</td>
+                    <td nowrap="true">{{ service.location }}</td>
+                    <td nowrap="true">{{ service.setup_time }}</td>
+                    <td nowrap="true">{{ service.cleanup_time }}</td>
+                    <td nowrap="true">{{ service.service_charge }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+
+            <thead>
+                <tr>
+                    <th colspan="5">Total of Service Charges</th>
+                    <th>{{ sum_service_charge.service_charge__sum }}</th>
+                </tr>
+            </thead>
+
+    </table>
+</div>
+</div>
+
+</body>
+</html>

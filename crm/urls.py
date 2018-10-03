@@ -1,6 +1,7 @@
 from django.conf.urls import url
 from . import views
 from django.urls import path
+from .views import admin_summary_pdf
 
 app_name = 'crm'
 urlpatterns = [
@@ -19,5 +20,8 @@ urlpatterns = [
     path('product/<int:pk>/edit/', views.product_edit, name='product_edit'),
     path('product/<int:pk>/delete/', views.product_delete, name='product_delete'),
     path('customer/<int:pk>/summary/', views.summary, name='summary'),
+    #url(r'^customer/<int:pk>/pdf/$',GeneratePDF.as_view(),name='report'),
+    path('customer/<int:pk>/pdf/', views.admin_summary_pdf, name='admin_summary_pdf'),
 
+    #path('customer/<int:pk>/pdf/',views.GeneratePDF,name='report'),
 ]
