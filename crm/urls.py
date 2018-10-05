@@ -2,6 +2,7 @@ from django.conf.urls import url
 from . import views
 from django.urls import path
 from .views import admin_summary_pdf
+from django.contrib.auth import views as auth_views
 
 app_name = 'crm'
 urlpatterns = [
@@ -22,6 +23,10 @@ urlpatterns = [
     path('customer/<int:pk>/summary/', views.summary, name='summary'),
     #url(r'^customer/<int:pk>/pdf/$',GeneratePDF.as_view(),name='report'),
     path('customer/<int:pk>/pdf/', views.admin_summary_pdf, name='admin_summary_pdf'),
+
+
+# restore password urls
+
 
     #path('customer/<int:pk>/pdf/',views.GeneratePDF,name='report'),
 ]

@@ -145,21 +145,21 @@ def summary(request, pk):
 
 
 def password_reset(request):
-    return render(request, 'home/password_reset.html',
+    return render(request, 'registration/password_reset.html',
     {'registration': password_reset})
 
 
 def password_reset_confirm(request):
-    return render(request, 'home/password_reset_confirm.html',
+    return render(request, 'registration/password_reset_confirm.html',
     {'registration': password_reset_confirm})
 
 def password_reset_email(request):
-    return render(request, 'home/password_reset_email.html',
+    return render(request, 'registration/password_reset_email.html',
     {'registration': password_reset_email})
 
-def password_reset_complete(request):
-    return render(request, 'home/password_reset_complete.html',
-    {'registration': password_reset_complete})
+def password_reset_done(request):
+    return render(request, 'registration/password_reset_complete.html',
+    {'registration': password_reset_done})
 
 
 from django.http import HttpResponse
